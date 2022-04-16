@@ -2,8 +2,9 @@
 public class test {
 
     public static void main(String[] args) {
-        System.out.println(100/10);
-        System.out.println(45/10);
+        int H = 0;
+        int M = 0;
+        System.out.println(((M/60)+ H)%12);
     }
 
 }
