@@ -62,14 +62,33 @@ public class Solution {
                 result++;
             }
         }
-        
-        for(int i = 0 ; i <= 6; i+=3) {
-            for(int j = 0 ; j <=6; j+=3) {
-                
+
+        for (int i = 0; i <= 6; i += 3) {
+            for (int j = 0; j <= 6; j += 3) {
+                map = new HashMap<>();
+
+                int row = i + 3;
+                int col = j + 3;
+                int count = 0;
+
+                for (int a = i; a < row; a++) {
+                    for (int b = j; b < col; b++) {
+                        map.put(arr[a][b], count);
+                        count++;
+                    }
+                }
+
+                if (map.size() == 9) {
+                    result++;
+                }
             }
         }
 
+        if (result == 27) {
+            sb.append(1).append("\n");
+        } else {
+            sb.append(0).append("\n");
+        }
 
-            sb.append(result).append("\n");
     }
 }
