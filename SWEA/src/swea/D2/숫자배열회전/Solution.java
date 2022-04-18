@@ -50,8 +50,8 @@ public class Solution {
                 }
                 sb.append("\n");
             }
-            System.out.println(sb);
         }
+        System.out.println(sb);
     }
 
     static int[][] angle(int[][] arr) {
