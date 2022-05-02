@@ -26,11 +26,11 @@ public class Solution {
             int pd = Integer.parseInt(st.nextToken());
             int pg = Integer.parseInt(st.nextToken());
 
-            if (pd > 0 && pg == 0) {
+            if (pd != 0 && pg == 0) {
                 result = false;
             } else if (pd < 100 && pg == 100) {
                 result = false;
-            }
+            } 
 
             sb.append("#").append(t).append(" ").append(result ? "Possible" : "Broken").append("\n");
         }
