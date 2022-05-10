@@ -17,12 +17,18 @@ public class Solution {
         for (int t = 1; t <= T; t++) {
             st = new StringTokenizer(br.readLine());
             
-            int D = Integer.parseInt(st.nextToken());
-            int L = Integer.parseInt(st.nextToken());
-            int N = Integer.parseInt(st.nextToken());
+            double D = Integer.parseInt(st.nextToken());
+            double L = Integer.parseInt(st.nextToken()) * 0.01;
+            double N = Integer.parseInt(st.nextToken());
+            double result = D;
             
             
-        }
-    }
+            for(int i = 1 ; i < N; i++) {
+                result += D*(1+i*L);
+            }
 
+            sb.append("#").append(t).append(" ").append((int)result).append("\n");
+        }
+        System.out.println(sb);
+    }
 }
