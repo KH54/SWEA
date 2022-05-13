@@ -3,8 +3,6 @@ package swea.D3.제곱수만들기;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
-import java.util.HashMap;
-import java.util.Map.Entry;
 
 public class Solution {
 
@@ -32,19 +30,12 @@ public class Solution {
         }
 
         for (int i = 2; i <= n; i++) {
-
             while (n % i == 0) {
                 n /= i;
                 result *= i;
             }
-
-            while (result % i == 0) {
-                result /= i;
-            }
-
         }
 
         return result == 0 ? n : result;
     }
-
 }

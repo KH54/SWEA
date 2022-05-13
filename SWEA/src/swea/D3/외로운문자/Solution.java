@@ -35,14 +35,15 @@ public class Solution {
             String result = "";
 
             for (Map.Entry<Character, Integer> entry : map.entrySet()) {
-                if (entry.getValue() % 2 != 0) {
+                if (entry.getValue() % 2 == 0) {
+                    continue;
+                } else {
                     result += entry.getKey();
                 }
             }
             if(result.equals("")) {
                 result = "Good";
             }
-            
             sb.append("#").append(t).append(" ").append(result).append("\n");
         }
         System.out.println(sb);
