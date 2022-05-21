@@ -4,6 +4,8 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.Arrays;
+import java.util.HashMap;
+import java.util.Map.Entry;
 import java.util.StringTokenizer;
 
 public class Solution {
@@ -20,21 +22,22 @@ public class Solution {
             int N = Integer.parseInt(br.readLine());
             StringTokenizer st = new StringTokenizer(br.readLine());
 
-            int[] arr = new int[N];
+            HashMap<Integer, Integer> map = new HashMap<>();
+
             String result = "Yes";
-            
+
             for (int n = 0; n < N; n++) {
                 int num = Integer.parseInt(st.nextToken());
-                arr[n] = num;
-                
-                if (Arrays.asList(arr).contains(num)) {
+                if (map.containsKey(num)) {
                     result = "No";
                 }
+                map.put(num, 1);
+
             }
 
             sb.append("#").append(t).append(" ").append(result).append("\n");
         }
-        sb.setLength(sb.length()-1);
+        sb.setLength(sb.length() - 1);
         System.out.println(sb);
     }
 
