@@ -42,6 +42,7 @@ public class Solution {
             }
             sb.append("#").append(t).append(" ").append(best).append("\n");
         }
+        sb.setLength(sb.length()-1);
         System.out.println(sb);
     }
 
