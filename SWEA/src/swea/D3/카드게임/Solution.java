@@ -15,7 +15,11 @@ public class Solution {
 
         int[] arr = new int[10];
 
-        Arrays.fill(arr, 4);
+        for (int i = 0; i < arr.length; i++) {
+            arr[i] = 4;
+        }
+
+        arr[8] = 16;
 
         for (int t = 1; t <= T; t++) {
             int N = Integer.parseInt(br.readLine());
@@ -25,41 +29,33 @@ public class Solution {
             for (int n = 0; n < N; n++) {
                 int num = Integer.parseInt(br.readLine());
 
-                if (num == 1) {
-                    arr[0] += -1;
-                } else if (num == 10) {
+                if (num == 10) {
+                    arr[8] += -1;
+                } else if (num == 11) {
                     arr[9] += -1;
                 } else {
-                    arr[num - 1] += -1;
+                    arr[num - 2] += -1;
                 }
-
                 sum += num;
             }
 
             int over = 0;
-            int under = 0;
 
-            for (int i = 1; i < arr.length + 1; i++) {
-                if (sum + i >= 21) {
-                    if (i == 10) {
-                        over += arr[9];
-                    } else if (i == 1) {
-                        over += arr[0];
-                    } else {
-                        over += arr[i - 1];
-                    }
-                } else {
-                    if (i == 10) {
-                        under += arr[9];
-                    } else if (i == 1) {
-                        under += arr[0];
-                    } else {
-                        under += arr[i - 1];
-                    }
+            for (int i = 2; i < 10; i++) {
+                if (sum + i > 21) {
+                    over += arr[i - 2];
                 }
             }
 
-            sb.append("#").append(t).append(" ").append(over >= under ? "STOP" : "GAZUA").append("\n");
+            if (sum + 10 > 21) {
+                over += arr[8];
+            }
+
+            if (sum + 11 > 21) {
+                over += arr[9];
+            }
+
+            sb.append("#").append(t).append(" ").append(over >= (52 - N) ? "STOP" : "GAZUA").append("\n");
         }
         System.out.println(sb);
     }
