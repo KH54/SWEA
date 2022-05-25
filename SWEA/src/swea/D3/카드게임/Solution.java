@@ -3,7 +3,6 @@ package swea.D3.카드게임;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
-import java.util.Arrays;
 
 public class Solution {
 
@@ -38,24 +37,13 @@ public class Solution {
                 }
                 sum += num;
             }
-
             int over = 0;
 
-            for (int i = 2; i < 10; i++) {
-                if (sum + i > 21) {
-                    over += arr[i - 2];
-                }
+            for (int i = 20 - sum; i < 10; i++) {
+                over += arr[i];
             }
 
-            if (sum + 10 > 21) {
-                over += arr[8];
-            }
-
-            if (sum + 11 > 21) {
-                over += arr[9];
-            }
-
-            sb.append("#").append(t).append(" ").append(over >= (52 - N) ? "STOP" : "GAZUA").append("\n");
+            sb.append("#").append(t).append(" ").append((52 - N - over) <= over ? "STOP" : "GAZUA").append("\n");
         }
         System.out.println(sb);
     }
