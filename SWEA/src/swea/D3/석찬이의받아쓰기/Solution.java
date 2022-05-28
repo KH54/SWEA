@@ -15,12 +15,12 @@ public class Solution {
         for (int t = 1; t <= T; t++) {
             int N = Integer.parseInt(br.readLine());
             
-            char[] strArr = br.readLine().toCharArray();
-            char[] strArr2 = br.readLine().toCharArray();
+            char[] charArr = br.readLine().toCharArray();
+            char[] charArr2 = br.readLine().toCharArray();
             
             int cnt = 0;
             for(int n = 0; n < N; n++) {
-                if(strArr[n] == strArr2[n]) {
+                if(charArr[n] == charArr2[n]) {
                     cnt++;
                 }
             }
