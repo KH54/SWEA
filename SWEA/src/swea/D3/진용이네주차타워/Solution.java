@@ -32,14 +32,22 @@ public class Solution {
 
             Queue<Integer> queue = new LinkedList<>();
 
+            int cost = 0;
             int count = 0;
             int num = Integer.parseInt(br.readLine());
 
             for (int i = 0; i < m * 2; i++) {
                 if (num > 0) {
                     for (int r = 0; r < n; r++) {
-                        if (Ri[r][0] == 0) {
-                            Ri[r][0] = num;
+                        if (Ri[r][1] == 0) {
+                            Ri[r][1] = num;
+                            break;
+                        }
+                    }
+                } else {
+                    for(int r = 0; r< n; r++) {
+                        if(Ri[r][1] == num) {
+                            Ri[r][1] = 0;
                             break;
                         }
                     }
